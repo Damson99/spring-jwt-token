@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserPagedList usersPerPage(PageRequest pageRequest) {
+    public UserPagedList getUsersPerPage(PageRequest pageRequest) {
         return buildPagedList(userRepository.findAll(pageRequest));
     }
 

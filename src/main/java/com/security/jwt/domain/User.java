@@ -73,6 +73,6 @@ public class User
 
     @ManyToMany(fetch = FetchType.EAGER)
     @Column(nullable = false,
-            name = "roles")
+            name = "role")
     private Collection<Role> roles = new ArrayList<>();
 }

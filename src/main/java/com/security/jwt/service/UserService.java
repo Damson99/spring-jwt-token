@@ -9,7 +9,7 @@ import org.springframework.data.domain.PageRequest;
 public interface UserService {
     UserDto saveUser(User user);
     UserDto getUser(String username);
-    UserPagedList usersPerPage(PageRequest pageRequest);
+    UserPagedList getUsersPerPage(PageRequest pageRequest);
     Role saveRole(Role role);
     void addRoleToUser(String username, String roleName);
 }
