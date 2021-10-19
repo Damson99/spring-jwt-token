@@ -7,8 +7,7 @@ import org.mapstruct.Mapper;
 
 @Mapper(uses = {DateMapper.class})
 @DecoratedWith(UserMapperDecorator.class)
-public interface UserMapper
-{
+public interface UserMapper {
     User userDtoToUser(UserDto userDto);
 
     UserDto userToUserDto(User user);
