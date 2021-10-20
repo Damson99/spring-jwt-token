@@ -19,10 +19,11 @@ import java.util.UUID;
 @Entity(name = "User")
 @Table(name = "user",
         uniqueConstraints = {
-                @UniqueConstraint(name = "user_username_unique", columnNames = "username")
+                @UniqueConstraint(name = "user_username_unique", columnNames = "username"),
+                @UniqueConstraint(name = "user_email_unique", columnNames = "email"),
+                @UniqueConstraint(name = "user_phone_unique", columnNames = "phone")
         })
-public class User
-{
+public class User {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID",
@@ -55,16 +56,21 @@ public class User
             name = "username")
     private String username;
 
+    @Column(nullable = false,
+            name = "email")
+    private String email;
 
     @Column(nullable = false,
             name = "first_name")
     private String firstName;
 
-
     @Column(nullable = false,
             name = "surname")
     private String surname;
 
+    @Column(nullable = false,
+            name = "phone")
+    private String phone;
 
     @Column(nullable = false,
             name = "password")

@@ -20,7 +20,9 @@ public class UserDto {
     private Timestamp createdDate;
     private Timestamp lastModifiedDate;
     private String username;
+    private String email;
     private String firstName;
     private String surname;
+    private String phone;
     private Collection<Role> roles = new ArrayList<>();
 }

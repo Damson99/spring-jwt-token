@@ -14,12 +14,12 @@ import javax.persistence.*;
         uniqueConstraints = {
                 @UniqueConstraint(name = "role_name_unique", columnNames = "name")
         })
-public class Role
-{
+public class Role{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
+
     @Column(name = "name",
         nullable = false)
     private String name;

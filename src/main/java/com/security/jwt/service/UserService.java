@@ -6,10 +6,12 @@ import com.security.web.v1.model.UserDto;
 import com.security.web.v1.model.UserPagedList;
 import org.springframework.data.domain.PageRequest;
 
+import java.util.UUID;
+
 public interface UserService {
     UserDto saveUser(User user);
-    UserDto getUser(String username);
+    UserDto updateUser(UUID id, UserDto userDto);
+    UserDto getUserByUsername(String username);
     UserPagedList getUsersPerPage(PageRequest pageRequest);
-    Role saveRole(Role role);
-    void addRoleToUser(String username, String roleName);
+    UserDto addRoleToUser(String username, String roleName);
 }
