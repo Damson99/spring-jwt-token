@@ -22,7 +22,7 @@
 		<spring-boot-maven-plugin-version>2.5.5</spring-boot-maven-plugin-version>
 		<lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
 		<lombok.version>1.18.18</lombok.version>
-		<java-jwt.version>3.8.12</java-jwt.version>
+		<java-jwt.version>3.18.2</java-jwt.version>
 	</properties>
 
 
@@ -38,8 +38,7 @@
 		<dependency>
 			<groupId>com.auth0</groupId>
 			<artifactId>java-jwt</artifactId>
-<!--			<version>${java-jwt.version}</version>-->
-			<version>3.18.2</version>
+			<version>${java-jwt.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -87,7 +86,9 @@
 				<version>${spring-boot-maven-plugin-version}</version>
 			</plugin>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.1.0</version>
 				<executions>
 					<execution>
 						<id>auto-clean</id>

@@ -1,7 +1,6 @@
 package com.security.jwt.security.filter;
 
 import com.auth0.jwt.JWT;
-import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -44,7 +43,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     }
 
     @Override
-    protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
+    protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException {
         org.springframework.security.core.userdetails.User user = (org.springframework.security.core.userdetails.User) authResult.getPrincipal();
 
         String accessToken = JWT.create()
@@ -60,8 +59,6 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
                 .withIssuer(request.getRequestURL().toString())
                 .sign(ALGORITHM);
 
-//        response.setHeader("access_token", accessToken);
-//        response.setHeader("refresh_token", refreshToken);
         Map<String, String> tokens = new HashMap<>();
         tokens.put("access_token", accessToken);
         tokens.put("refresh_token", refreshToken);

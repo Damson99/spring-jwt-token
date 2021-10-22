@@ -5,6 +5,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 public class Constants {
     public final static String ROLE_ADMIN = "ROLE_ADMIN";
     public final static String LOGIN_PATH = "/api/v1/login";
+    public final static String REFRESH_TOKEN_PATH = "/api/v1/user/token/refresh";
     public static final String SECRET = "secret";
     public static final String ROLES = "roles";
     public static final int EXPIRATION_TIME = 86_400_000; //24 hours
